@@ -43,7 +43,7 @@ geneannot.map <- function(in.ids, in.type, out.type, org="Hs", pkg.name=NULL, un
   in.ids0=in.ids
   in.ids <- unique(as.character(in.ids))#unique necessary for select()# if(unique.map)
   out.ids=character(length(in.ids))
-  res <- try(suppressWarnings(select(db.obj,
+  res <- try(suppressWarnings(AnnotationDbi:::select(db.obj,
                                      keys = in.ids,
                                      keytype = in.type,
                                      columns=c(in.type, out.type))))
